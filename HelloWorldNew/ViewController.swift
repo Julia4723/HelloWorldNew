@@ -27,45 +27,48 @@ final class ViewController: UIViewController {
         startChangeColorButton.layer.cornerRadius = 12
     }
     
+    var counter = 0
+    
     
     @IBAction func changeColorSignal(_ sender: UIButton) {
-        var color = signalRed.alpha
-        color = signalYellow.alpha
-        color = signalGreen.alpha
+        counter += 1
         
-        switch color {
-        case signalRed.alpha:
+        switch counter {
+        case 1:
             sender.setTitle("Next", for: .normal)
             signalRed.alpha = 1
-            signalYellow.alpha = 0.3
-            signalGreen.alpha = 0.3
-        case signalYellow.alpha:
+        case 2:
             signalRed.alpha = 0.3
             signalYellow.alpha = 1
-        case signalGreen.alpha:
-            signalRed.alpha = 0.3
+        case 3:
+            signalYellow.alpha = 0.3
             signalGreen.alpha = 1
         default:
-            signalGreen.alpha = 1
+            signalGreen.alpha = 0.3
+            counter = 0
+           
         }
         
+        
+        
+      //Через if else  не получилось
         /*
-         if signalRed.alpha == 0.3 && signalYellow.alpha == 0.3 && signalGreen.alpha == 0.3 {
-         signalRed.alpha = 1
-         sender.setTitle("Next", for: .normal)
-         } else if signalRed.alpha == 1 {
-         signalRed.alpha = 0.3
-         signalYellow.alpha = 1
-         } else if signalYellow.alpha == 1 {
-         signalYellow.alpha = 0.3
-         signalGreen.alpha = 1
-         } else if signalGreen.alpha == 1 {
-         signalGreen.alpha = 0.3
-         }
-             
-         */
+            if signalRed.alpha == 0.3 && signalYellow.alpha == 0.3 && signalGreen.alpha == 0.3 {
+            signalRed.alpha = 1
+            sender.setTitle("Next", for: .normal)
+                continue
+            } else if signalRed.alpha == 1 {
+            signalRed.alpha = 0.3
+            signalYellow.alpha = 1
+                continue
+            } else if signalYellow.alpha == 1 {
+            signalYellow.alpha = 0.3
+            signalGreen.alpha = 1
+                continue
+            } else if signalGreen.alpha == 1 {
+            signalGreen.alpha = 0.3
+            }
+        */
+         
     }
-    
-    
-    
 }
