@@ -48,7 +48,9 @@ final class ViewController: UIViewController {
             counter = 0
            
         }
-        
+    }
+}
+
         
         
       //Через if else  не получилось
@@ -70,5 +72,3 @@ final class ViewController: UIViewController {
             }
         */
          
-    }
-}
